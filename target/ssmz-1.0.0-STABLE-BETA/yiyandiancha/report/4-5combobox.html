@@ -1,0 +1,97 @@
+<!DOCTYPE html>  
+    <html>  
+    <head>  
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+        <title>Combo - jQuery EasyUI Demo</title>  
+        <link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">  
+        <link rel="stylesheet" type="text/css" href="../themes/icon.css">  
+         <link rel="stylesheet" type="text/css" href="demo.css">  
+         <script type="text/javascript" src="../jquery-1.4.4.min.js"></script>  
+         <script type="text/javascript" src="../jquery.easyui.min.js"></script>  
+    <script>   
+		function ShowTable(district,question){
+	        //alert(district);
+			//alert(question);
+		if(question == 1){//根据选择的问题设置表头
+		$('#test').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:710,
+				height:400,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'data/4-5-1_'+district+'.json',
+				
+				
+				columns:[[
+			        {field:'col1',title:'部位',width:230,align:'center'},
+					{field:'col2',title:'症状',width:230,align:'center'},
+					{field:'col3',title:'n',width:115,align:'center'},
+					{field:'col4',title:'%',width:115,align:'center'}
+				]]
+			});
+			}
+		}
+		
+		$(function loadData(){
+			$('#district').combobox({
+				url:'combobox_district_data.json',
+				valueField:'id',
+				textField:'text'
+			});
+			$('#question').combobox({
+				url:'combobox_question4-5_data.json',
+				valueField:'id',
+				textField:'text'
+			});
+		});
+		
+		$('#noresult').panel('close');
+		
+		function getValue(){
+			var district = $('#district').combobox('getValue');
+			var question = $('#question').combobox('getValue');
+			if(district !=6){
+			$('#noresult').panel('open');
+			$('#result').panel('close');
+			}else{
+			$('#result').panel('open');
+			$('#noresult').panel('close');
+			ShowTable(district,question);
+			}
+		}
+		
+	
+    </script>  
+</head>  
+<body> 
+<p style="padding-left:170px;">营养缺乏病的临床检查</p>
+<div region="north" border="true" style="height:80px;padding-left:150px">
+
+  <div style="float:left;padding:20px;">
+	<span>地区:  </span>
+	 <select id="district" class="easyui-combobox" name="state" style="width:200px; height:auto;" required="true" editable="false">
+	
+		</select> 
+
+ 
+	</div>
+	<div style="float:left;padding:20px;">
+	<span>问题： </span>
+	 <select id="question" class="easyui-combobox" name="state" style="width:250px; height:auto;" required="true" editable="false">
+	
+		</select> 
+	</div>
+	<div style="float:left;padding:20px;">
+	<a id="select" href="#" onclick="getValue()" class="easyui-linkbutton" style="width:70px;">查  询</a> 
+	</div>
+	</div>
+
+	<div id="noresult" class="easyui-panel" style="border:#FFF;padding-left:400px;padding-top:10px;">等待数据上传……</div>
+	<div id="result" class="easyui-panel" region="center" style="padding-left:150px;border:#FFF">
+	    <table id="test"></table>
+		
+	</div>
+</body>  
+</html>  

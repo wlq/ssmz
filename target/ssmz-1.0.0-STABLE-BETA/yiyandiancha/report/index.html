@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>农村重点人群营养健康调研分析</title>
+	<link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
+	<script type="text/javascript" src="../jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../jquery.easyui.min.js"></script>
+	<script>
+		$(function(){
+			var p = $('body').layout('panel','west').panel({
+				onCollapse:function(){
+					alert('collapse');
+				}
+			});
+			setTimeout(function(){
+				$('body').layout('collapse','east');
+			},0);
+		});
+		
+		function showpage(url){
+    $('#content').load(url);
+	}
+	
+	</script>
+</head>
+<body class="easyui-layout">
+	<div region="north" border="false" style="height:140px;background:#B3DFDA;"><h1>农村重点人群营养健康调研分析</h1></div>
+	<div region="west" split="true" title="调查人群" style="width:310px;padding:10px;">
+		<div class="easyui-accordion" style="width:280px;padding:0px;">  
+			
+			<div title="重点人群——0-6岁儿童" style="overflow:auto;">
+					<a href="javascript:void(0)" onClick="showpage('1-1combobox.html')" class="easyui-linkbutton" plain="true">一、看护人及家庭基本情况</a></br>
+					<a href="javascript:void(0)" onClick="showpage('1-2combobox.html')" class="easyui-linkbutton" plain="true">二、儿童基本情况</a></br>
+					<a href="javascript:void(0)" onClick="showpage('1-3combobox.html')" class="easyui-linkbutton" plain="true">三、儿童母亲生育及妊娠期情况</a></br>
+					<a href="javascript:void(0)" onClick="showpage('1-4combobox.html')" class="easyui-linkbutton" plain="true">四、儿童近一周膳食情况</a></br>
+					<a href="javascript:void(0)" onClick="showpage('1-5combobox.html')" class="easyui-linkbutton" plain="true">五、儿童家长营养知识调查</a></br>
+					<a href="javascript:void(0)" onClick="showpage('1-6combobox.html')" class="easyui-linkbutton" plain="true">六、儿童体格测量、生化检测</a></br>
+			</div>
+			<div title="重点人群——7-17岁儿童">
+					<a href="javascript:void(0)" onClick="showpage('2-1combobox.html')" class="easyui-linkbutton" plain="true">一、基本信息</a></br>
+					<a href="javascript:void(0)" onClick="showpage('2-2combobox.html')" class="easyui-linkbutton" plain="true">二、疾病史及疾病家族史</a></br>
+					<a href="javascript:void(0)" onClick="showpage('2-3combobox.html')" class="easyui-linkbutton" plain="true">三、体格检查与生化检查</a></br>
+					<a href="javascript:void(0)" onClick="showpage('2-4combobox.html')" class="easyui-linkbutton" plain="true">四、营养缺乏病的临床检查</a></br>
+			</div>
+			<div title="重点人群——18-59岁妇女">
+				<a href="javascript:void(0)" onClick="showpage('3-1combobox.html')" class="easyui-linkbutton" plain="true">一、基本信息</a></br>
+				<a href="javascript:void(0)" onClick="showpage('3-2combobox.html')" class="easyui-linkbutton" plain="true">二、生活习惯调查</a></br>
+				<a href="javascript:void(0)" onClick="showpage('3-3combobox.html')" class="easyui-linkbutton" plain="true">三、疾病史及疾病家族史</a></br>
+				<a href="javascript:void(0)" onClick="showpage('3-4combobox.html')" class="easyui-linkbutton" plain="true">四、乳腺癌和宫颈癌相关调查</a></br>
+				<a href="javascript:void(0)" onClick="showpage('3-5combobox.html')" class="easyui-linkbutton" plain="true">五、体格检查与生化检查</a></br>
+				<a href="javascript:void(0)" onClick="showpage('3-6combobox.html')" class="easyui-linkbutton" plain="true">六、营养缺乏病的临床检查</a></br>
+			</div>
+			<div title="重点人群——60岁以上老年人">
+				<a href="javascript:void(0)" onClick="showpage('4-1combobox.html')" class="easyui-linkbutton" plain="true">一、基本信息</a></br>
+				<a href="javascript:void(0)" onClick="showpage('4-2combobox.html')" class="easyui-linkbutton" plain="true">二、生活习惯调查</a></br>
+				<a href="javascript:void(0)" onClick="showpage('4-3combobox.html')" class="easyui-linkbutton" plain="true">三、疾病史及疾病家族史</a></br>
+				<a href="javascript:void(0)" onClick="showpage('4-4combobox.html')" class="easyui-linkbutton" plain="true">四、体格检查与生化检查</a></br>
+				<a href="javascript:void(0)" onClick="showpage('4-5combobox.html')" class="easyui-linkbutton" plain="true">五、营养缺乏病的临床检查</a></br>
+			</div>
+			<div title="重点人群——精神病人">
+				<a href="javascript:void(0)" onClick="showpage('wait.html')" class="easyui-linkbutton" plain="true">一、基本信息</a></br>
+				<a href="javascript:void(0)" onClick="showpage('wait.html')" class="easyui-linkbutton" plain="true">二、生活习惯调查</a></br>
+				<a href="javascript:void(0)" onClick="showpage('wait.html')" class="easyui-linkbutton" plain="true">三、疾病史及疾病家族史</a></br>
+				<a href="javascript:void(0)" onClick="showpage('wait.html')" class="easyui-linkbutton" plain="true">四、体格检查与生化检查</a></br>
+				<a href="javascript:void(0)" onClick="showpage('wait.html')" class="easyui-linkbutton" plain="true">五、营养缺乏病的临床检查</a></br>
+			</div>
+			<div title="重点人群——残疾人">
+				<a href="javascript:void(0)" onClick="showpage('wait.html')" class="easyui-linkbutton" plain="true">一、基本信息</a></br>
+				<a href="javascript:void(0)" onClick="showpage('wait.html')" class="easyui-linkbutton" plain="true">二、生活习惯调查</a></br>
+				<a href="javascript:void(0)" onClick="showpage('wait.html')" class="easyui-linkbutton" plain="true">三、疾病史及疾病家族史</a></br>
+				<a href="javascript:void(0)" onClick="showpage('wait.html')" class="easyui-linkbutton" plain="true">四、体格检查与生化检查</a></br>
+				<a href="javascript:void(0)" onClick="showpage('wait.html')" class="easyui-linkbutton" plain="true">五、营养缺乏病的临床检查</a></br>
+			</div>
+     
+        </div>  
+	</div>
+	<div id="content" region="center" title="调查结果" >
+	
+	</div>
+</body>
+</html>

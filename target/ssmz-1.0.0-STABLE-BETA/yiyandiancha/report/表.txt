@@ -1,0 +1,88 @@
+1-1-2 ，1-2-4  ,1-3-2  ,1-4-2 
+2-1-2  ,2-3-6   ,2-3-8
+3-1-2  ,3-2-1  3-4-1  ,3-5-2
+4-1-2  ,4-2-1  ,4-4-2
+5-1-2  ,5-2-1  ,5-4-2
+6-1-2  ,6-2-1  ,6-4-2
+基本信息：
+$('#test').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:400,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'datagrid_data.json',
+				
+				
+				columns:[[
+			        {field:'col1',title:'因素',width:230,align:'center'},
+					{field:'col2',title:'',width:230,align:'center'},
+					{field:'col3',title:'n',width:115,align:'center'},
+					{field:'col4',title:'%',width:115,align:'center'}
+				]]
+			});
+
+
+
+
+
+
+疾病及疾病史：
+$('#test').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:400,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'datagrid_data.json',
+				columns:[
+				[
+			        {field:'col1',title:'疾病名称',width:60,align:'center',rowspan:3},
+					{title:'是否患病n(%)',align:'center',colspan:3},
+					{title:'什么时候n(%)',align:'center',colspan:4},
+					{title:'诊断依据n(%)',align:'center',colspan:3},
+					{title:'治疗状况n(%)',align:'center',colspan:4}
+				],[
+					{field:'col2',title:'有',width:40,align:'center'},
+					{field:'col3',title:'无',width:40,align:'center'},
+					{field:'col4',title:'不知道',width:40,align:'center'},
+				
+					{field:'col5',title:'10年以上',width:50,align:'center'},
+					{field:'col6',title:'5-10年内',width:50,align:'center'},
+					{field:'col7',title:'3-5年内',width:50,align:'center'},
+					{field:'col8',title:'近3年',width:50,align:'center'},
+				
+				    {field:'col9',title:'村医诊断',width:90,align:'center'},
+					{field:'col10',title:'乡卫生院诊断',width:90,align:'center'},
+					{field:'col11',title:'县及以上医院诊断',width:95,align:'center'},
+				
+					{field:'col12',title:'未做任何治疗',width:70,align:'center'},
+					{field:'col13',title:'非药物治疗',width:70,align:'center'},
+					{field:'col14',title:'正在药物治疗',width:70,align:'center'},
+					{field:'col15',title:'已控制',width:70,align:'center'}
+				]]
+			});
+
+营养缺乏病：
+$('#test').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:400,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'datagrid_data.json',
+				
+				
+				columns:[[
+			        {field:'col1',title:'部位',width:230,align:'center'},
+					{field:'col2',title:'症状',width:230,align:'center'},
+					{field:'col3',title:'n',width:115,align:'center'},
+					{field:'col4',title:'%',width:115,align:'center'}
+				]]
+			});

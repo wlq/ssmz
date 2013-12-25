@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>  
+    <html>  
+    <head>  
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+        <title>Combo - jQuery EasyUI Demo</title>  
+        <link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">  
+        <link rel="stylesheet" type="text/css" href="../themes/icon.css">  
+         <link rel="stylesheet" type="text/css" href="demo.css">  
+         <script type="text/javascript" src="../jquery-1.4.4.min.js"></script>  
+         <script type="text/javascript" src="../jquery.easyui.min.js"></script>  
+    <script>   
+		function ShowTable(district,question){
+	       if(question == 1){
+			    $('#p').panel('close');
+				$('#test').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:400,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'data/6-3-1_'+district+'.json',
+				frozenColumns:[[
+					{field:'col1',title:'疾病名称',width:60,align:'center',rowspan:3}
+				]],
+				columns:[[
+					{title:'是否患病n(%)',align:'center',colspan:3},
+					{title:'什么时候n(%)',align:'center',colspan:4},
+					{title:'诊断依据n(%)',align:'center',colspan:3},
+					{title:'治疗状况n(%)',align:'center',colspan:4}
+					],[
+					{field:'col2',title:'有',width:40,align:'center'},
+					{field:'col3',title:'无',width:40,align:'center'},
+					{field:'col4',title:'不知道',width:40,align:'center'},
+				
+					{field:'col5',title:'10年以上',width:50,align:'center'},
+					{field:'col6',title:'5-10年内',width:50,align:'center'},
+					{field:'col7',title:'3-5年内',width:50,align:'center'},
+					{field:'col8',title:'近3年',width:50,align:'center'},
+				
+				    {field:'col9',title:'村医诊断',width:90,align:'center'},
+					{field:'col10',title:'乡卫生院诊断',width:90,align:'center'},
+					{field:'col11',title:'县及以上医院诊断',width:95,align:'center'},
+				
+					{field:'col12',title:'未做任何治疗',width:70,align:'center'},
+					{field:'col13',title:'非药物治疗',width:70,align:'center'},
+					{field:'col14',title:'正在药物治疗',width:70,align:'center'},
+					{field:'col15',title:'已控制',width:70,align:'center'}
+					]]
+				});
+		    }//end of question==1
+			if(question == 2){
+			    $('#p').panel('open');
+				$('#test').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:120,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'data/6-3-2_'+district+'t.json',
+				frozenColumns:[[
+			        {field:'col0',title:'',width:0,align:'center',rowspan:1}
+				]],
+				columns:[[
+			        {field:'col1',title:'因素',width:230,align:'center'},
+					{field:'col2',title:'',width:230,align:'center'},
+					{field:'col3',title:'n',width:115,align:'center'},
+					{field:'col4',title:'%',width:115,align:'center'}
+				]]
+			});
+			$('#total').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:200,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'data/6-3-2_'+district+'.json',
+				frozenColumns:[[
+			        {field:'col1',title:'疾病名称',width:90,align:'center',rowspan:2}
+				]],
+				columns:[
+				[
+					{title:'发病时间n(%)',align:'center',colspan:4},
+					{title:'治疗方式n(%)',align:'center',colspan:4}
+				],[
+					{field:'col2',title:'10年以上',width:70,align:'center'},
+					{field:'col3',title:'5-10年内',width:70,align:'center'},
+					{field:'col4',title:'3-5年内',width:70,align:'center'},
+					{field:'col5',title:'近3年',width:70,align:'center'},
+				
+					{field:'col6',title:'未做任何治疗',width:70,align:'center'},
+					{field:'col7',title:'非药物治疗',width:70,align:'center'},
+					{field:'col8',title:'正在药物治疗',width:70,align:'center'},
+					{field:'col9',title:'已控制',width:70,align:'center'}
+				]]
+			});
+
+			}//end of question==2
+			if(question == 3){
+				$('#p').panel('open');
+				$(function(){
+			$('#test').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:120,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'data/6-3-3_'+district+'t.json',
+				frozenColumns:[[
+			        {field:'col0',title:'',width:0,align:'center',rowspan:1}
+				]],
+				columns:[[
+			        {field:'col1',title:'因素',width:230,align:'center'},
+					{field:'col2',title:'',width:230,align:'center'},
+					{field:'col3',title:'n',width:115,align:'center'},
+					{field:'col4',title:'%',width:115,align:'center'}
+				]]
+			});
+			$('#total').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:200,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'data/6-3-3_'+district+'.json',
+				frozenColumns:[[
+			        {field:'col1',title:'外伤名称',width:60,align:'center',rowspan:2}
+				]],
+				columns:[
+				[
+					{title:'发生时间n(%)',align:'center',colspan:4},
+					{title:'处理方式n(%)',align:'center',colspan:3},
+					{title:'治愈结果n(%)',align:'center',colspan:3}
+				],[
+					{field:'col2',title:'10年以上',width:70,align:'center'},
+					{field:'col3',title:'5-10年内',width:70,align:'center'},
+					{field:'col4',title:'3-5年内',width:70,align:'center'},
+					{field:'col5',title:'近3年',width:70,align:'center'},
+				
+				    {field:'col6',title:'未做任何处理',width:80,align:'center'},
+					{field:'col7',title:'消毒、包扎处理',width:80,align:'center'},
+					{field:'col8',title:'手术',width:80,align:'center'},
+				
+					{field:'col9',title:'痊愈，无后遗症',width:80,align:'center'},
+					{field:'col10',title:'痊愈，留下残疾',width:80,align:'center'},
+					{field:'col11',title:'未愈',width:80,align:'center'}
+				]]
+			});
+			});
+			}//end of question == 3
+			if(question == 4){
+			$('#p').panel('open');
+				$(function(){
+			$('#test').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:120,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'data/6-3-4_'+district+'t.json',
+				frozenColumns:[[
+			        {field:'col0',title:'',width:0,align:'center',rowspan:1}
+				]],
+				columns:[[
+			        {field:'col1',title:'因素',width:230,align:'center'},
+					{field:'col2',title:'',width:230,align:'center'},
+					{field:'col3',title:'n',width:115,align:'center'},
+					{field:'col4',title:'%',width:115,align:'center'}
+				]]
+			});
+			$('#total').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:200,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'data/6-3-4_'+district+'.json',
+				frozenColumns:[[
+			        {field:'col1',title:'手术名称',width:99,align:'center',rowspan:2}
+				]],
+				columns:[
+				[
+					{title:'手术时间n(%)',align:'center',colspan:4},
+					{title:'治愈结局n(%)',align:'center',colspan:3}
+				],[
+					{field:'col2',title:'10年以上',width:80,align:'center'},
+					{field:'col3',title:'5-10年内',width:80,align:'center'},
+					{field:'col4',title:'3-5年内',width:80,align:'center'},
+					{field:'col5',title:'近3年',width:80,align:'center'},
+				
+					{field:'col6',title:'痊愈，无后遗症',width:80,align:'center'},
+					{field:'col7',title:'痊愈，留下残疾',width:80,align:'center'},
+					{field:'col8',title:'未愈',width:80,align:'center'}
+				]]
+			});
+			
+		});
+
+			}//end of question == 4
+			if(question == 5){
+				$('#p').panel('open');
+				$(function(){
+			$('#test').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:120,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'data/6-3-5_'+district+'t.json',
+				frozenColumns:[[
+			        {field:'col0',title:'',width:0,align:'center',rowspan:1}
+				]],
+				columns:[[
+			        {field:'col1',title:'因素',width:230,align:'center'},
+					{field:'col2',title:'',width:230,align:'center'},
+					{field:'col3',title:'n',width:115,align:'center'},
+					{field:'col4',title:'%',width:115,align:'center'}
+				]]
+			});
+			$('#total').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:750,
+				height:200,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'data/6-3-5_'+district+'.json',
+				frozenColumns:[[
+			        {field:'col1',title:'中毒名称',width:99,align:'center',rowspan:2}
+				]],
+				columns:[
+				[
+					{title:'中毒时间n(%)',align:'center',colspan:4},
+					{title:'处理方式n(%)',align:'center',colspan:3}
+				
+				],[
+					{field:'col2',title:'10年以上',width:80,align:'center'},
+					{field:'col3',title:'5-10年内',width:80,align:'center'},
+					{field:'col4',title:'3-5年内',width:80,align:'center'},
+					{field:'col5',title:'近3年',width:80,align:'center'},
+				
+				    {field:'col6',title:'未做任何处理',width:80,align:'center'},
+					{field:'col7',title:'简单处理',width:80,align:'center'},
+					{field:'col8',title:'医院急救',width:80,align:'center'}
+				
+				]]
+			});
+			
+		});
+
+			}//end of question == 5
+			if(question == 6){
+				$('#p').panel('close');
+				$('#test').datagrid({
+				title:'统计结果',
+				iconCls:'icon-save',
+				width:710,
+				height:180,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'data/6-3-6_'+district+'.json',
+				
+				frozenColumns:[[
+			        {field:'col0',title:'',width:0,align:'center',rowspan:1}
+				]],
+				columns:[[
+			        {field:'col1',title:'因素',width:230,align:'center'},
+					{field:'col2',title:'',width:230,align:'center'},
+					{field:'col3',title:'n',width:115,align:'center'},
+					{field:'col4',title:'%',width:115,align:'center'}
+				]]
+			});
+			}//end of question == 6
+var str="<img src =\"images\\6-3-";
+			
+		str = str + question;
+		str = str + "_";
+		str = str + district;
+		str = str + ".jpg \" />"
+        
+       picture.innerHTML=str;
+		}
+		
+		$(function loadData(){
+			$('#district').combobox({
+				url:'combobox_district_data.json',
+				valueField:'id',
+				textField:'text'
+			});
+			$('#question').combobox({
+				url:'combobox_question4-3_data.json',
+				valueField:'id',
+				textField:'text'
+			});
+		});
+		
+		function getValue(){
+			var district = $('#district').combobox('getValue');
+			var question = $('#question').combobox('getValue');
+			//alert(district+" "+question);
+			//alert(district);
+			
+			//$('#result').load("1-1comboboxTest.html?district="+district);
+			//window.open("1-1comboboxTest.html?district="+district);
+			ShowTable(district,question);
+		}
+		
+	
+    </script>  
+</head>  
+<body> 
+
+<div region="north" border="true" style="height:80px;padding-left:150px">
+
+  <div style="float:left;padding:20px;">
+	<span>地区:  </span>
+	 <select id="district" class="easyui-combobox" name="state" style="width:200px; height:auto;" required="true" editable="false">
+	
+		</select> 
+
+ 
+	</div>
+	<div style="float:left;padding:20px;">
+	<span>问题： </span>
+	 <select id="question" class="easyui-combobox" name="state" style="width:250px; height:auto;" required="true" editable="false">
+	
+		</select> 
+	</div>
+	<div style="float:left;padding:20px;">
+	<a id="select" href="#" onclick="getValue()" class="easyui-linkbutton" style="width:70px;">查  询</a> 
+	</div>
+	</div>
+
+	<div id="result" region="center" style="padding-left:150px">
+	
+	    <table id="test"></table>
+		<div id="p" class="easyui-panel" style="border:#FFF;">
+			<table id="total"></table>
+		</div>
+<div id="picture" class="easyui-panel" style="border:#FFF;padding-left:130px;padding-top:10px;"></div>
+	</div>
+</body>  
+</html>  
